@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "2f1ea6c1-b438-40af-b770-32ec65413dbf",
+		"name": "bk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13221406"
+	},
+	"item": [
+		{
+			"name": "mostrarUsuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/"
+			},
+			"response": []
+		},
+		{
+			"name": "crearUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"username\": \"javier4\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"Analista\",\r\n    \"permissions\": [\"lectura\"] \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "desactivateUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"admin\", \"password\": \"123456\", \"role\": \"Administrador\", \"permissions\": [\"lectura\", \"escritura\"] }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/users/66c5e5056d9722bd36645bb0"
+			},
+			"response": []
+		},
+		{
+			"name": "cambiar rol de usuario",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"admin\", \"password\": \"123456\", \"role\": \"Administrador\", \"permissions\": [\"lectura\", \"escritura\"] }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/users/66c5e4fe6d9722bd36645bae/Administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "regirtar una venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nombreComprador\": \"66c5e4fe6d9722bd36645bae\",\r\n    \"totalCompra\": 2322\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/sales"
+			},
+			"response": []
+		},
+		{
+			"name": "consultar ventas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nombreComprador\": \"javier\",\r\n    \"totalCompra\": 23\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/sales"
+			},
+			"response": []
+		}
+	]
+}
