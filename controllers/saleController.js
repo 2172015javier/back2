@@ -13,7 +13,7 @@ exports.createSale = async (req, res) => {
 
 exports.getSales = async (req, res) => {
   try {
-    const sales = await Sale.find();
+    const sales = await Sale.find().populate('nombreComprador', 'username');
     res.json(sales);
   } catch (error) {
     res.status(400).json({ message: error.message });

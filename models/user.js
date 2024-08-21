@@ -40,7 +40,7 @@ UsuarioSchema.methods.toJSON = function(){
     return usuario
 }
 
-module.exports = model('Usuario', UsuarioSchema);
+module.exports = model('User', UsuarioSchema);
 
 // const mongoose = require('mongoose');
 // const bcrypt = require('bcryptjs');
